@@ -9,7 +9,7 @@
 #
 
 # Do we run this on Bash v4.1+?
-[[ "${BASH_VERSION}" < 4.1 ]] && { echo -e "${0} requires \033[1mbash v4.0 or newer\033[m."; exit 1; }
+[[ "${BASH_VERSION}" < 4.1 ]] && { echo -e "${0} requires \033[1mbash v4.1 or newer\033[m."; exit 1; }
 
 # Accept $1, optionally $2 and/or $3. Return N lines or bytes
 headc() {
