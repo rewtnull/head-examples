@@ -15,7 +15,6 @@
 headc() {
     local IFS="|"
     [[ ! -a "${1}" ]] && { echo "'${1}' File does not exist."; exit 1; }
-    local numlines="${2}" # Value can't be assigned to special var
     case "${2}" in
 	-c|--bytes) # Output N bytes instead of lines
 	    if [[ "${3}" =~ ^[[:digit:]]+$ ]]; then
@@ -28,6 +27,8 @@ headc() {
 	    fi;;
 	"")
 	    local numlines="10";; # Default no. of output lines
+	*)
+	    local numlines="${2}";; # Value can't be assigned to special var
     esac
     if [[ "${numlines}" =~ ^[[:digit:]]+$ ]]; then # Output N lines
 	for (( i = 0; "${i}" < "${numlines}"; i++ )); do
