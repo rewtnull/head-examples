@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-# Head example 3 - 20120211
+# Head example 3 - 20130211
 #
 # Copyright (C) 2013 Marcus Hoffren <marcus.hoffren@gmail.com>.
 # License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>.
