@@ -17,7 +17,7 @@ headb() {
     [[ ! -a "${1}" ]] && { echo "'${1}' File does not exist."; exit 1; }
     if [[ "${2}" =~ ^[[:digit:]]+$ ]]; then
 	read -N "${2}" line < "${1}"
-	echo "${line}"
+	echo -n "${line}"
 	exit 0
     else
 	echo "'${2}' Invalid argument. Expecting a numeric value."
