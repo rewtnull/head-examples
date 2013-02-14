@@ -19,7 +19,7 @@ headc() {
 	-c|--bytes) # Output N bytes instead of lines
 	    if [[ "${3}" =~ ^[[:digit:]]+$ ]]; then
 		read -N "${3}" line < "${1}"
-		echo "${line}"
+		echo -n "${line}"
 		exit 0
 	    else
 		echo "'${3}' Invalid argument. Expecting a numeric value."
@@ -33,9 +33,7 @@ headc() {
     if [[ "${numlines}" =~ ^[[:digit:]]+$ ]]; then # Output N lines
 	for (( i = 0; "${i}" < "${numlines}"; i++ )); do
 	    read -r line
-	    if (( "${?}" == "0" )); then # Return value always true as long as there's something to read
-		echo "${line}"
-	    fi
+	    (( "${?}" == "0" )) && echo "${line}" # Return value always true as long as there's something to read
 	done < "${1}"
 	exit 0
     else
