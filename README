@@ -1,1 +1,15 @@
 Some example head like functions for Bash v4.1+
+
+The first example shows a simple 'read and display N lines from file'
+function. This behaviour is pretty much like the head --lines option, but
+without [-]K support (see the head manpage).
+Usage: heada.sh <filename> <no. of lines>
+
+The second example shows a simple 'read and display N bytes from file' function.
+This behaviour is like the head --bytes option, but without [-]K support.
+Usage: headb.sh <filename> <no. of bytes>
+
+The third example is a combination of the first two, with the added bonus of a
+command line argument (-c|--bytes) to read bytes, and a default value for the
+number of lines to display if the second argument is ommitted.
+Usage: headc.sh <filename> [-c|--bytes] [#]
